@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloSpring" class="com.xiaoyu.HelloSpring">
+        <property name="user" value="张三">
+
+        </property>
+    </bean>
+
+    <bean id="user02" class="com.xiaoyu.User02">
+<!--        <constructor-arg name="id" value="1"></constructor-arg>-->
+<!--        <constructor-arg name="username" value="张三"></constructor-arg>-->
+<!--        <constructor-arg name="password" value="wwsx11"></constructor-arg>-->
+
+        <constructor-arg type="int" value="1"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="张三"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="www11a"></constructor-arg>
+    </bean>
+
+    <bean id="user03" class="com.xiaoyu.User03">
+        <property name="user02" ref="user02"></property>
+    </bean>
+
+    <bean id="imp_dao" class="com.xiaoyu.dao.imp.Impl_Dao">
+    </bean>
+
+    <bean id="service" class="com.xiaoyu.service.Impl_Service">
+        <property name="dao" ref="imp_dao"></property>
+    </bean>
+
+</beans>
