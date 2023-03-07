@@ -1,4 +1,4 @@
-package com.xiaoyu;
+package com.xiaoyu.user;
 
 public class User03 {
     private User02 user02;

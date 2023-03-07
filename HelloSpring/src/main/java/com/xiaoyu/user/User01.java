@@ -1,25 +1,22 @@
-package com.xiaoyu;
+package com.xiaoyu.user;
 
-public class User02 {
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("User01")
+@Scope("singleton")
+public class User01 {
+    @Value("1")
     private int id;
+    @Value("张三")
     private String username;
+    @Value("123")
     private String password;
 
-    public User02(int id, String username, String password) {
+    public User01(int id, String username, String password) {
         this.id = id;
         this.username = username;
-        this.password = password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
     }
 

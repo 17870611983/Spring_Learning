@@ -8,8 +8,8 @@
 
         </property>
     </bean>
-
-    <bean id="user02" class="com.xiaoyu.User02">
+<!--通过构造器 有参构造-->
+    <bean id="user02" class="com.xiaoyu.user.User02">
 <!--        <constructor-arg name="id" value="1"></constructor-arg>-->
 <!--        <constructor-arg name="username" value="张三"></constructor-arg>-->
 <!--        <constructor-arg name="password" value="wwsx11"></constructor-arg>-->
@@ -18,16 +18,21 @@
         <constructor-arg type="java.lang.String" value="张三"></constructor-arg>
         <constructor-arg type="java.lang.String" value="www11a"></constructor-arg>
     </bean>
-
-    <bean id="user03" class="com.xiaoyu.User03">
+<!--通过set方法-->
+    <bean id="user03" class="com.xiaoyu.user.User03">
         <property name="user02" ref="user02"></property>
     </bean>
+<!--无参构造-->
+    <bean id="imp_dao" class="com.xiaoyu.dao.imp.Impl_Dao"></bean>
 
-    <bean id="imp_dao" class="com.xiaoyu.dao.imp.Impl_Dao">
-    </bean>
+<!--    <bean id="service" class="com.xiaoyu.service.Impl_Service">-->
+<!--        <property name="dao" ref="imp_dao"></property>-->
+<!--    </bean>-->
 
-    <bean id="service" class="com.xiaoyu.service.Impl_Service">
-        <property name="dao" ref="imp_dao"></property>
-    </bean>
+<!--    <bean id="bean01" class="com.xiaoyu.bean.Bean01" scope="singleton"></bean>-->
+<!--    <bean id="bean02" name="bean022" class="com.xiaoyu.bean.Bean02" scope="prototype"></bean>-->
+<!--    <bean id="bean01" class="com.xiaoyu.bean.Bean01"></bean>-->
 
+
+    <bean id="Bean02Factory" class="com.xiaoyu.factory.Bean02Factory" factory-method="createBean02"></bean>
 </beans>
