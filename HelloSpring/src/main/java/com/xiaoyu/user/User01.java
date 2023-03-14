@@ -14,12 +14,6 @@ public class User01 {
     @Value("123")
     private String password;
 
-    public User01(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
     @Override
     public String toString() {
         return "User01{" +

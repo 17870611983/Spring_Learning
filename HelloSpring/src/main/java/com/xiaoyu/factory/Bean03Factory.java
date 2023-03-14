@@ -8,7 +8,7 @@ public class Bean03Factory {
     }
     public Bean04 createBean04()
     {
-        System.out.println("调用createBean04");
+        System.out.println("Bean03Factory调用createBean04返回一个Bean04对象");
         return new Bean04();
     }
 }

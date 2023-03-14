@@ -11,7 +11,7 @@ public class Impl_Dao implements Dao {
     @Override
     public void save(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
-        User01 user01=(User01) applicationContext.getBean("user01");
+        User01 user01=(User01) applicationContext.getBean("User01");
         System.out.println(user01);
         System.out.println("调用Impl_Dao的Save方法");
     }

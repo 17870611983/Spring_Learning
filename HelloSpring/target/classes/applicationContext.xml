@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="helloSpring" class="com.xiaoyu.HelloSpring">
         <property name="user" value="张三">
@@ -10,7 +11,7 @@
     </bean>
 <!--通过构造器 有参构造-->
     <bean id="user02" class="com.xiaoyu.user.User02">
-<!--        <constructor-arg name="id" value="1"></constructor-arg>-->
+<!--        <constructor-arg name="id" va   lue="1"></constructor-arg>-->
 <!--        <constructor-arg name="username" value="张三"></constructor-arg>-->
 <!--        <constructor-arg name="password" value="wwsx11"></constructor-arg>-->
 
@@ -19,8 +20,8 @@
         <constructor-arg type="java.lang.String" value="www11a"></constructor-arg>
     </bean>
 <!--通过set方法-->
-    <bean id="user03" class="com.xiaoyu.user.User03">
-        <property name="user02" ref="user02"></property>
+    <bean id="user03" class="com.xiaoyu.user.User03" autowire="byType">
+<!--        <property name="user02" ref="user02"></property>-->
     </bean>
 <!--无参构造-->
     <bean id="imp_dao" class="com.xiaoyu.dao.imp.Impl_Dao"></bean>
@@ -35,4 +36,16 @@
 
 
     <bean id="Bean02Factory" class="com.xiaoyu.factory.Bean02Factory" factory-method="createBean02"></bean>
+<!--    使用容器工厂-->
+    <bean id="Bean03Factory" class="com.xiaoyu.factory.Bean03Factory"></bean>
+    <bean id="Bean04" class="com.xiaoyu.bean.Bean04" factory-bean="Bean03Factory" factory-method="createBean04"></bean>
+    <!--自动装配实例工厂-->
+    <bean id="Bean05" class="com.xiaoyu.factory.Bean05Factory"></bean>
+
+<!--    开启注解扫描-->
+    <context:component-scan base-package="com.xiaoyu">
+<!--        注解扫描-->
+    </context:component-scan>
+
+    <bean class="com.xiaoyu.bean.Bean06"></bean>
 </beans>
