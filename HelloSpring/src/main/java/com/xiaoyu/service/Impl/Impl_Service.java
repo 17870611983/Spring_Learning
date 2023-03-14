@@ -1,8 +1,7 @@
 package com.xiaoyu.service.Impl;
 
-import com.xiaoyu.dao.Dao;
+import com.xiaoyu.dao.UserDao;
 import com.xiaoyu.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,13 +10,13 @@ import javax.annotation.Resource;
 public class Impl_Service implements UserService {
 @Resource(name = "Impl_Dao")
 //    @Autowired
-    private Dao dao;
+    private UserDao dao;
 
     public Impl_Service() {
         System.out.println("Impl_Service构造器");
     }
 
-//    public void setDao(Dao dao) {
+//    public void setDao(UserDao dao) {
 //        this.dao = dao;
 //    }
 
